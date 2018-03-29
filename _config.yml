@@ -1,0 +1,21 @@
+plugins:
+  - jekyll-multiple-languages-plugin
+
+exclude:
+  # Informació
+  - LICENCE.md
+  - README.md
+  # Gestors de paquets
+  ## Bundle
+  - Gemfile
+  - Gemfile.lock
+
+url: ""
+baseurl: ""
+permalink: /:title/
+
+languages: ["ca", "es"]
+exclude_from_localizations: ["assets"]
+languageNames:
+  ca: "Català"
+  es: "Español"

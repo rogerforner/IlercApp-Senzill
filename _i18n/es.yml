@@ -1,0 +1,10 @@
+site_info:
+  name: "Senzill"
+  motto: "Un tema sencillo!"
+  description: "Un tema muy bonito."
+  keywords: "una, dos, tres, cuatro"
+pages:
+  index:
+    title: "Inicio"
+  about:
+    title: "Sobre nosotros"
