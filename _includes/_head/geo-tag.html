@@ -1,0 +1,22 @@
+{%- capture region -%}
+  {%- t site_info.geo_tag.region -%}
+{%- endcapture -%}
+
+{%- capture placename -%}
+  {%- t site_info.geo_tag.placename -%}
+{%- endcapture -%}
+
+{%- capture position -%}
+  {%- t site_info.geo_tag.position -%}
+{%- endcapture -%}
+
+{%- capture icbm -%}
+  {%- t site_info.geo_tag.icbm -%}
+{%- endcapture -%}
+
+{%- unless region contains "null" -%}
+  <meta name="geo.region" content="{{- icbm -}}" />
+  <meta name="geo.placename" content="{{- region -}}" />
+  <meta name="geo.position" content="{{- placename -}}" />
+  <meta name="ICBM" content="{{- position -}}" />
+{%- endunless -%}

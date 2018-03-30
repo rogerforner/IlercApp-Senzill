@@ -1,0 +1,68 @@
+{%- capture site_name -%}
+  {%- t site_info.name -%}
+{%- endcapture -%}
+
+{%- capture motto -%}
+  {%- t site_info.motto -%}
+{%- endcapture -%}
+
+{%- capture locale -%}
+  {%- t site_info.locale -%}
+{%- endcapture -%}
+
+{%- capture title -%}
+  {%- t page.title -%}
+{%- endcapture -%}
+
+{%- capture description -%}
+  {%- t page.description -%}
+{%- endcapture -%}
+
+{%- capture app_id -%}
+  {%- t page.facebook.app_id -%}
+{%- endcapture -%}
+
+{%- capture publisher -%}
+  {%- t page.facebook.publisher -%}
+{%- endcapture -%}
+
+{%- capture author -%}
+  {%- t page.facebook.author -%}
+{%- endcapture -%}
+
+{%- capture image -%}
+  {%- t page.facebook.img -%}
+{%- endcapture -%}
+
+<!-- Facebook Open Graph -->
+{%- unless publisher contains "null" -%}
+  <meta property="article:publisher" content="{{- publisher -}}">
+{%- endunless -%}
+
+{%- unless author contains "null" -%}
+  <meta property="article:author" content="{{- author -}}">
+{%- endunless -%}
+
+{%- unless app_id contains "null" -%}
+  <meta property="fb:app_id" content="{{- app_id -}}">
+{%- endunless -%}
+
+<meta property="og:type" content="website">
+
+<meta property="og:locale" content="{{- locale -}}">
+
+{%- if motto contains "null" -%}
+  <meta property="og:site_name" content="{{- site_name -}}">
+{%- else -%}
+  <meta property="og:site_name" content="{{- site_name -}}: {{ motto -}}">
+{%- endif -%}
+
+<meta property="og:title" content="{{- title -}}">
+
+<meta property="og:description" content="{{- description -}}">
+
+{%- unless image contains "null" -%}
+  <meta property="og:image" content="{{- site.url -}}/{{- image -}}">
+{%- endunless -%}
+
+<meta property="og:url" content="{{- site.baseurl -}}{{- page.url -}}">

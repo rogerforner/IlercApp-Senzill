@@ -1,0 +1,16 @@
+# jekyll serve --config _config.yml,_config-prod.yml
+# jekyll build --config _config.yml,_config-prod.yml
+
+# Bing Webmaster Center: http://www.bing.com/webmaster
+# Google Search Console: https://www.google.com/webmasters/verification/home?hl=en
+# Pinterest Site Verification: http://pinterest.com/
+# Yandex Webmaster: https://webmaster.yandex.com/
+site_verification:
+  bing:
+  google:
+  pinterest:
+  yandex:
+
+# google_analytics: https://www.google.com/analytics/web/#home/
+analytics:
+  google_analytics: #ID de seguiment (UA-000000-2).

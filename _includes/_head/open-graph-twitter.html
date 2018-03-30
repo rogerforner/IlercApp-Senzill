@@ -1,0 +1,50 @@
+{%- capture site_name -%}
+  {%- t site_info.name -%}
+{%- endcapture -%}
+
+{%- capture motto -%}
+  {%- t site_info.motto -%}
+{%- endcapture -%}
+
+{%- capture title -%}
+  {%- t page.title -%}
+{%- endcapture -%}
+
+{%- capture description -%}
+  {%- t page.description -%}
+{%- endcapture -%}
+
+{%- capture publisher -%}
+  {%- t page.twitter.publisher -%}
+{%- endcapture -%}
+
+{%- capture author -%}
+  {%- t page.twitter.author -%}
+{%- endcapture -%}
+
+{%- capture image -%}
+  {%- t page.twitter.img -%}
+{%- endcapture -%}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+
+{%- unless publisher contains "null" -%}
+  <meta name="twitter:site" content="{{- publisher -}}">
+{%- endunless -%}
+
+{%- unless author contains "null" -%}
+  <meta name="twitter:creator" content="{{- author -}}">
+{%- endunless -%}
+
+{%- if motto contains "null" -%}
+  <meta name="twitter:title" content="{{- title }} | {{ site_name -}}">
+{%- else -%}
+  <meta name="twitter:title" content="{{- title }} | {{ site_name -}}: {{ motto -}}">
+{%- endif -%}
+
+<meta name="twitter:description" content="{{- description -}}">
+
+{%- unless image contains "null" -%}
+  <meta name="twitter:image" content="{{- site.url -}}/{{- image -}}">
+{%- endunless -%}

@@ -1,10 +1,26 @@
 ---
 layout: default
 title: pages.index.title
+description: pages.index.description
+robots: pages.index.robots
 
 namespace: index
 permalink: index
 permalink_es: index
+
+facebook:
+  app_id: open_graph.facebook.app_id
+  publisher: open_graph.facebook.publisher #https://www.facebook.com/compteLLocWeb
+  author: open_graph.facebook.author #https://www.facebook.com/compteAutorRa
+  img: open_graph.facebook.img
+google_plus:
+  publisher: open_graph.google_plus.publisher #https://plus.google.com/compteLLocWeb
+  author: open_graph.google_plus.author #https://plus.google.com/compteAutorRa
+  img: open_graph.google_plus.img
+twitter:
+  publisher: open_graph.twitter.publisher #@compteLlocWeb
+  author: open_graph.twitter.author #@compteAutorRa
+  img: open_graph.twitter.img
 ---
 
-{% tf index.html %}
+{%- tf index.html -%}

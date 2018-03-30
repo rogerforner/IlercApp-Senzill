@@ -1,0 +1,19 @@
+{%- if site.site_verification.bing -%}
+<!-- Bing Webmaster Center -->
+<meta name="msvalidate.01" content="{{- site.site_verification.bing -}}">
+{%- endif -%}
+
+{%- if site.site_verification.google -%}
+<!-- Google Search Console -->
+<meta name="google-site-verification" content="{{- site.site_verification.google -}}">
+{%- endif -%}
+
+{%- if site.site_verification.pinterest -%}
+<!-- Pinterest Site Verification -->
+<meta name="p:domain_verify" content="{{- site.site_verification.pinterest -}}">
+{%- endif -%}
+
+{%- if site.site_verification.yandex -%}
+<!-- Yandex Webmasters -->
+<meta name="yandex-verification" content="{{- site.site_verification.yandex -}}">
+{%- endif -%}

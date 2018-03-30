@@ -1,10 +1,32 @@
 site_info:
   name: "Senzill"
-  motto: "Un tema sencillo!"
-  description: "Un tema muy bonito."
-  keywords: "una, dos, tres, cuatro"
+  motto: "null"
+  locale: "es-es"
+  geo_tag:
+    region: "null"
+    placename: "null"
+    position: "null"
+    icbm: "null"
+open_graph:
+  facebook:
+    app_id: "null"
+    publisher: "null" #https://www.facebook.com/compteLLocWeb
+    author: "null" #https://www.facebook.com/compteAutorRa
+    img: "null"
+  google_plus:
+    publisher: "null" #https://plus.google.com/compteLLocWeb
+    author: "null" #https://plus.google.com/compteAutorRa
+    img: "null"
+  twitter:
+    publisher: "null" #@compteLlocWeb
+    author: "null" #@compteAutorRa
+    img: "null"
 pages:
   index:
     title: "Inicio"
+    description: "Página de inicio."
+    robots: "index,follow"
   about:
     title: "Sobre nosotros"
+    description: "Página sobre nosotros."
+    robots: "index,follow"

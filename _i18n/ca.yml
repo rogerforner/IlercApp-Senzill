@@ -1,10 +1,32 @@
 site_info:
   name: "Senzill"
-  motto: "Un tema senzill!"
-  description: "Un tema molt bonic."
-  keywords: "una, dos, tres, quatre"
+  motto: "Per Roger Forner Fabre"
+  locale: "ca-es"
+  geo_tag:
+    region: "ES-CT"
+    placename: "Tortosa"
+    position: "40.812578;0.521442"
+    icbm: "40.812578, 0.521442"
+open_graph:
+  facebook:
+    app_id: "null"
+    publisher: "null" #https://www.facebook.com/compteLLocWeb
+    author: "null" #https://www.facebook.com/compteAutorRa
+    img: "null"
+  google_plus:
+    publisher: "null" #https://plus.google.com/compteLLocWeb
+    author: "null" #https://plus.google.com/compteAutorRa
+    img: "null"
+  twitter:
+    publisher: "null" #@compteLlocWeb
+    author: "@rogerforner" #@compteAutorRa
+    img: "null"
 pages:
   index:
     title: "Inici"
+    description: "Pàgina d'inici."
+    robots: "index,follow"
   about:
     title: "Sobre nosaltres"
+    description: "Pàgina sobre nosaltres."
+    robots: "index,follow"
