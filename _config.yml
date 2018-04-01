@@ -2,6 +2,8 @@ plugins:
   - jekyll-multiple-languages-plugin
 
 exclude:
+  # SRC
+  - src
   # Informació
   - LICENCE.md
   - README.md
@@ -9,6 +11,10 @@ exclude:
   ## Bundle
   - Gemfile
   - Gemfile.lock
+  ## Node (npm)
+  - node_modules
+  - package.json
+  - package-lock.json
 
 url: ""
 baseurl: ""

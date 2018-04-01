@@ -1,0 +1,14 @@
+{
+  "name": "senzill",
+  "version": "1.0.0",
+  "description": "Senzill és un tema inicial per crear llocs webs amb Jekyll i Gulp. Amb la idea d'aproximar-nos a Jamstack",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Roger Forner Fabre",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  }
+}
