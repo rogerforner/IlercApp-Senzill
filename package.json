@@ -9,6 +9,7 @@
   "author": "Roger Forner Fabre",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.9.1"
+    "gulp": "^3.9.1",
+    "gulp-sass": "^3.2.1"
   }
 }
