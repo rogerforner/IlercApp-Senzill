@@ -15,8 +15,10 @@ exclude:
   - node_modules
   - package.json
   - package-lock.json
+  # Gulp (task runner)
+  - gulpfile.js
 
-url: ""
+url: "http://localhost:3000"
 baseurl: ""
 permalink: /:title/
 

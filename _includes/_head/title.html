@@ -11,10 +11,10 @@
 {%- endcapture -%}
 
 <title>
-  {{- title -}}
-  {%- if motto contains "null" -%}
-    | {{- name -}}
+  {{- title }}
+  {% if motto contains "null" %}
+    | {{ name -}}
   {%- else -%}
-    | {{- name -}}: {{- motto -}}
+    | {{ name -}}: {{ motto -}}
   {%- endif -%}
 </title>
