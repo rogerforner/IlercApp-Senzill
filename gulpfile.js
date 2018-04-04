@@ -1,11 +1,12 @@
-var gulp        = require('gulp');
-var pump        = require('pump');
-var sass        = require('gulp-sass');
-var uglify      = require('gulp-uglify');
-var concat      = require('gulp-concat');
-var cleanCSS    = require('gulp-clean-css');
-var shell       = require('gulp-shell');
-var browserSync = require('browser-sync').create();
+var gulp         = require('gulp');
+var pump         = require('pump');
+var sass         = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
+var cleanCSS     = require('gulp-clean-css');
+var uglify       = require('gulp-uglify');
+var concat       = require('gulp-concat');
+var shell        = require('gulp-shell');
+var browserSync  = require('browser-sync').create();
 
 gulp.task('sass', function(scss) {
   pump([
@@ -24,7 +25,11 @@ gulp.task('stylesheets', function (css) {
     gulp.src([
       'src/css/**/*.css'
     ]),
-    cleanCSS({compatibility: 'ie8'}),
+    autoprefixer({
+      browsers: ['last 3 versions'],
+      cascade: true
+    }),
+    cleanCSS({compatibility: '*'}),
     concat('ilercapp.css'),
     gulp.dest('assets/css'),
     shell('gulp build'),
