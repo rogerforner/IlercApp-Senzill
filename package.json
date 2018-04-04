@@ -1,25 +1,24 @@
 {
-  "name": "senzill",
-  "version": "1.0.0",
-  "description": "Senzill és un tema inicial per crear llocs webs amb Jekyll i Gulp. Amb la idea d'aproximar-nos a Jamstack",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "Roger Forner Fabre",
-  "license": "ISC",
-  "devDependencies": {
-    "browser-sync": "^2.23.6",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^5.0.0",
-    "gulp-clean-css": "^3.9.3",
-    "gulp-concat": "^2.6.1",
-    "gulp-sass": "^3.2.1",
-    "gulp-shell": "^0.6.5",
-    "gulp-uglify": "^3.0.0",
-    "pump": "^3.0.0"
-  },
-  "dependencies": {
-    "gulp-htmlmin": "^4.0.0"
-  }
+	"name": "senzill",
+	"version": "1.0.0",
+	"description": "Senzill és un tema inicial per crear llocs webs amb Jekyll i Gulp. Amb la idea d'aproximar-nos a Jamstack",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"author": "Roger Forner Fabre",
+	"license": "ISC",
+	"devDependencies": {
+		"gulp": "^3.9.1",
+		"gulp-autoprefixer": "^5.0.0",
+		"gulp-clean-css": "^3.9.3",
+		"gulp-concat": "^2.6.1",
+		"gulp-sass": "^3.2.1",
+		"gulp-shell": "^0.6.5",
+		"gulp-uglify": "^3.0.0",
+		"pump": "^3.0.0"
+	},
+	"dependencies": {
+		"gulp-htmlmin": "^4.0.0"
+	}
 }
