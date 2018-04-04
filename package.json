@@ -18,5 +18,8 @@
     "gulp-shell": "^0.6.5",
     "gulp-uglify": "^3.0.0",
     "pump": "^3.0.0"
+  },
+  "dependencies": {
+    "gulp-htmlmin": "^4.0.0"
   }
 }
