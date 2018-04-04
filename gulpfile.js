@@ -107,6 +107,12 @@ gulp.task('site', shell.task('gulp build && gulp html'));
 /*
 # Gulp
 *******************************************************************************/
+/*
+## gulp: execució ordenada + watch:
+   1. gulp styles: sass + css
+   2. gulp javascript
+   3. gulp watch [site: gulp build + gulp html]
+----------------------------------------------------------------------------- */
 gulp.task('default', shell.task([
   'gulp styles',
   'gulp javascript',
@@ -124,5 +130,4 @@ gulp.task('watch', ['site'], function() {
     '_posts/**/*.{html, md}',
     './*.html',
   ], ['site']);
-  // gulp.watch("_site/**/*.html", ['html']);
 });
