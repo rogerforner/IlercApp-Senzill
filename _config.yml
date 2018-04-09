@@ -18,7 +18,7 @@ exclude:
   # Gulp (task runner)
   - gulpfile.js
 
-url: "http://senzill.oo/_site"
+url: "http://senzill.dev/_site/"
 baseurl: ""
 permalink: /:title/
 
@@ -27,3 +27,24 @@ exclude_from_localizations: ["assets"]
 languageNames:
   ca: "Català"
   es: "Español"
+
+pwa:
+  manifest:
+    name: "Senzill"
+    short_name: "Senzill"
+    theme_color: "#0b1728"
+    background_color: "#afc6e9"
+  sw_cache:
+    - "/"
+    - "/assets/"
+    - "/offline/index.html"
+
+legal:
+  owner:
+    name: ""
+    id: ""
+    domicile: ""
+    email: ""
+    domain: "senzill.dev"
+  developer:
+    name: "IlercApp"

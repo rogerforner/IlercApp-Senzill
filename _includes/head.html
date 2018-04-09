@@ -20,8 +20,11 @@
 {%- include _head/open-graph-twitter.html -%}
 {%- include _head/open-graph-gplus.html -%}
 
+<!-- Manifest -->
+<link rel="manifest" href="{{ '/manifest.json' | prepend: site.baseurl_root }}">
+
 <!-- Estils del lloc web -->
-<link rel="stylesheet" href="{{ "/assets/css/ilercapp.css" | prepend: site.baseurl_root }}"/>
+<link rel="stylesheet" href="{{ '/assets/css/ilercapp.css' | prepend: site.baseurl_root }}"/>
 
 <!-- Analítica del lloc web -->
 {%- include _head/analytic-google.html -%}

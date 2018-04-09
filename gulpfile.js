@@ -70,7 +70,8 @@ gulp.task('javascript', function (js) {
 });
 
 /*
-# Site
+# Site (compilació)
+Tractament dels fitxers durant i després de la compilació Jekyll.
 *******************************************************************************/
 /*
 ## Jekyll build
@@ -98,11 +99,27 @@ gulp.task('html', function (html) {
 });
 
 /*
+## Service Worker
+El service worker es compila amb Jekyll donat que necessitem certa Informació
+dels fitxers de configuració .yml. Un cop compilat ens interessa tractar el
+fitxer.
+----------------------------------------------------------------------------- */
+gulp.task('sw', function (sw) {
+  pump([
+    gulp.src('_site/sw.js', {base: './'}),
+    uglify(),
+    gulp.dest('./')
+  ],
+    sw
+  );
+});
+
+/*
 ## Site: execució ordenada:
    1. gulp build
    2. gulp html
 ----------------------------------------------------------------------------- */
-gulp.task('site', shell.task('gulp build && gulp html'));
+gulp.task('site', shell.task('gulp build && gulp sw && gulp html'));
 
 /*
 # Gulp
