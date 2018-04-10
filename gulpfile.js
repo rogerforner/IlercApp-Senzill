@@ -147,4 +147,5 @@ gulp.task('watch', ['site'], function() {
     '_posts/**/*.{html, md}',
     './*.html',
   ], ['site']);
+  gulp.watch('./**/*.yml', ['site']);
 });

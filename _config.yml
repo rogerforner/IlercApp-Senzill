@@ -18,12 +18,12 @@ exclude:
   # Gulp (task runner)
   - gulpfile.js
 
-url: "http://senzill.dev/_site/"
-baseurl: ""
+url: "http://senzill.oo"
+baseurl: "/_site"
 permalink: /:title/
 
 languages: ["ca", "es"]
-exclude_from_localizations: ["assets"]
+exclude_from_localizations: ["assets", "_posts"]
 languageNames:
   ca: "Català"
   es: "Español"

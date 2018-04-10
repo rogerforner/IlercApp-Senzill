@@ -1,0 +1,30 @@
+{%- capture title -%}
+  {%- t page.title -%}
+{%- endcapture -%}
+
+{%- capture name -%}
+  {%- t site_info.name -%}
+{%- endcapture -%}
+
+{%- capture motto -%}
+  {%- t site_info.motto -%}
+{%- endcapture -%}
+
+{
+  "version": "https://jsonfeed.org/version/1",
+  "title": "{{- title }} {% if motto contains "null" %} | {{ name -}}{%- else -%} | {{ name -}}: {{ motto -}}{%- endif -%}",
+  "home_page_url": "{{- site.url | append:site.baseurl -}}",
+  "feed_url": "{{- site.url | append:site.baseurl | append:page.url -}}",
+  "items": [
+  {%- for post in site.posts -%}
+    {
+      "id": "{{- forloop.index -}}",
+      "title": "{{- post.title -}}",
+      "url": "{{- site.url | append:site.baseurl | append:post.url -}}",
+      "image": "{{- post.image -}}",
+      "content_text": "{{- post.description -}}",
+      "date_published": "{{- post.date | date_to_xmlschema -}}"
+    }{%- if forloop.length > 1 and forloop.length != forloop.index -%},{%- endif -%}
+  {%- endfor -%}
+  ]
+}
