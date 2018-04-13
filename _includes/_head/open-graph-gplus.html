@@ -1,37 +1,37 @@
 {%- capture site_name -%}
-  {%- t site_info.name -%}
+  {{- site.t[page.lang].site_info.name -}}
 {%- endcapture -%}
 
 {%- capture motto -%}
-  {%- t site_info.motto -%}
+  {{- site.t[page.lang].site_info.motto -}}
 {%- endcapture -%}
 
 {%- capture description -%}
-  {%- t page.description -%}
+  {{- page.description -}}
 {%- endcapture -%}
 
 {%- capture publisher -%}
-  {%- t page.google_plus.publisher -%}
+  {{- site.t[page.lang].open_graph.google_plus.publisher -}}
 {%- endcapture -%}
 
 {%- capture author -%}
-  {%- t page.google_plus.author -%}
+  {{- site.t[page.lang].open_graph.google_plus.author -}}
 {%- endcapture -%}
 
 {%- capture image -%}
-  {%- t page.google_plus.img -%}
+  {{- site.t[page.lang].open_graph.google_plus.img -}}
 {%- endcapture -%}
 
 <!-- Google Plus -->
-{%- unless publisher contains "null" -%}
+{%- if publisher -%}
   <link rel="publisher" href="{{- publisher -}}">
-{%- endunless -%}
+{%- endif -%}
 
-{%- unless author contains "null" -%}
+{%- if author -%}
   <link rel="author" content="{{- author -}}"/>
-{%- endunless -%}
+{%- endif -%}
 
-{%- if motto contains "null" -%}
+{%- if motto == empty -%}
   <meta itemprop="name" content="{{ site_name -}}">
 {%- else -%}
   <meta itemprop="name" content="{{ site_name -}}: {{ motto -}}">
@@ -39,6 +39,6 @@
 
 <meta itemprop="description" content="{{- description -}}">
 
-{%- unless image contains "null" -%}
+{%- if image -%}
   <meta itemprop="image" content="{{- site.url -}}/{{- image -}}">
-{%- endunless -%}
+{%- endif -%}

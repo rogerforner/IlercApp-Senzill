@@ -1,6 +1,5 @@
-plugins:
-  - jekyll-multiple-languages-plugin
-
+# Configuració
+# ------------------------------------------------------------------------------
 exclude:
   # SRC
   - src
@@ -18,16 +17,122 @@ exclude:
   # Gulp (task runner)
   - gulpfile.js
 
+# Lloc Web
+# ------------------------------------------------------------------------------
 url: "http://senzill.oo"
 baseurl: "/_site"
-permalink: /:title/
 
-languages: ["ca", "es"]
-exclude_from_localizations: ["assets", "_posts"]
-languageNames:
-  ca: "Català"
-  es: "Español"
+# Idiomes
+# ------------------------------------------------------------------------------
+langs:
+  - "ca"
+  - "es"
 
+t:
+  default_lang: "ca"
+  ca:
+    site_info:
+      name: "Senzill"
+      motto: "Per Roger Forner Fabre"
+      locale: "ca-es"
+      geo_tag:
+        region: "ES-CT"
+        placename: "Tortosa"
+        position: "40.812578;0.521442"
+        icbm: "40.812578, 0.521442"
+    open_graph:
+      facebook:
+        app_id:
+        publisher: #https://www.facebook.com/compteLLocWeb
+        author: #https://www.facebook.com/compteAutorRa
+        img:
+      google_plus:
+        publisher: #https://plus.google.com/compteLLocWeb
+        author: #https://plus.google.com/compteAutorRa
+        img:
+      twitter:
+        publisher: #@compteLlocWeb
+        author: "@rogerforner" #@compteAutorRa
+        img:
+  es:
+    site_info:
+      name: "Senzill"
+      motto:
+      locale: "es-es"
+      geo_tag:
+        region:
+        placename:
+        position:
+        icbm:
+    open_graph:
+      facebook:
+        app_id:
+        publisher: #https://www.facebook.com/compteLLocWeb
+        author: #https://www.facebook.com/compteAutorRa
+        img:
+      google_plus:
+        publisher: #https://plus.google.com/compteLLocWeb
+        author: #https://plus.google.com/compteAutorRa
+        img:
+      twitter:
+        publisher: #@compteLlocWeb
+        author: #@compteAutorRa
+        img:
+    pages:
+      index:
+        title: "Inicio"
+        description: "Página de inicio."
+        robots: "index,follow"
+      about:
+        title: "Sobre nosotros"
+        description: "Página sobre nosotros."
+        robots: "index,follow"
+
+# Tipus de publicacions
+# ------------------------------------------------------------------------------
+collections:
+  pages:
+    output: true
+  posts:
+    output: true
+
+# URLs permanents
+# ------------------------------------------------------------------------------
+permalink: "pretty"
+
+defaults:
+  - # Pàgines
+    scope:
+      path: "_pages/ca"
+    values:
+      permalink: "/ca/:title"
+      lang: "ca"
+      layout: "default"
+  -
+    scope:
+      path: "_pages/es"
+    values:
+      permalink: "/es/:title"
+      lang: "es"
+      layout: "default"
+  - # Publicacions
+    scope:
+      path: "_posts/ca"
+    values:
+      permalink: "/ca/posts/:title"
+      lang: "ca"
+      layout: "default"
+  -
+    scope:
+      path: "_posts/es"
+    values:
+      permalink: "/es/posts/:title"
+      lang: "es"
+      layout: "default"
+
+
+# Progressive Web App
+# ------------------------------------------------------------------------------
 pwa:
   manifest:
     name: "Senzill"
@@ -39,12 +144,14 @@ pwa:
     - "/assets/"
     - "/offline/index.html"
 
+# Informació legal
+# ------------------------------------------------------------------------------
 legal:
   owner:
-    name: ""
-    id: ""
-    domicile: ""
-    email: ""
+    name:
+    id:
+    domicile:
+    email:
     domain: "senzill.dev"
   developer:
     name: "IlercApp"

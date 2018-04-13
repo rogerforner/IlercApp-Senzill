@@ -1,18 +1,18 @@
 {%- capture title -%}
-  {%- t page.title -%}
+  {{- page.title -}}
 {%- endcapture -%}
 
 {%- capture name -%}
-  {%- t site_info.name -%}
+  {{- site.t[page.lang].site_info.name -}}
 {%- endcapture -%}
 
 {%- capture motto -%}
-  {%- t site_info.motto -%}
+  {{- site.t[page.lang].site_info.motto -}}
 {%- endcapture -%}
 
 <title>
   {{- title }}
-  {% if motto contains "null" %}
+  {% if motto == empty %}
     | {{ name -}}
   {%- else -%}
     | {{ name -}}: {{ motto -}}

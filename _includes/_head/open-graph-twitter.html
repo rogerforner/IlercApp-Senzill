@@ -1,43 +1,43 @@
 {%- capture site_name -%}
-  {%- t site_info.name -%}
+  {{- site.t[page.lang].site_info.name -}}
 {%- endcapture -%}
 
 {%- capture motto -%}
-  {%- t site_info.motto -%}
+  {{- site.t[page.lang].site_info.motto -}}
 {%- endcapture -%}
 
 {%- capture title -%}
-  {%- t page.title -%}
+  {{- page.title -}}
 {%- endcapture -%}
 
 {%- capture description -%}
-  {%- t page.description -%}
+  {{- page.description -}}
 {%- endcapture -%}
 
 {%- capture publisher -%}
-  {%- t page.twitter.publisher -%}
+  {{- site.t[page.lang].open_graph.twitter.publisher -}}
 {%- endcapture -%}
 
 {%- capture author -%}
-  {%- t page.twitter.author -%}
+  {{- site.t[page.lang].open_graph.twitter.author -}}
 {%- endcapture -%}
 
 {%- capture image -%}
-  {%- t page.twitter.img -%}
+  {{- site.t[page.lang].open_graph.twitter.img -}}
 {%- endcapture -%}
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 
-{%- unless publisher contains "null" -%}
+{%- if publisher -%}
   <meta name="twitter:site" content="{{- publisher -}}">
-{%- endunless -%}
+{%- endif -%}
 
-{%- unless author contains "null" -%}
+{%- if author -%}
   <meta name="twitter:creator" content="{{- author -}}">
-{%- endunless -%}
+{%- endif -%}
 
-{%- if motto contains "null" -%}
+{%- if motto == empty -%}
   <meta name="twitter:title" content="{{- title }} | {{ site_name -}}">
 {%- else -%}
   <meta name="twitter:title" content="{{- title }} | {{ site_name -}}: {{ motto -}}">
@@ -45,6 +45,6 @@
 
 <meta name="twitter:description" content="{{- description -}}">
 
-{%- unless image contains "null" -%}
+{%- if image -%}
   <meta name="twitter:image" content="{{- site.url -}}/{{- image -}}">
-{%- endunless -%}
+{%- endif -%}

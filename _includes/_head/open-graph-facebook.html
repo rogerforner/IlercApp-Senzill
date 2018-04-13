@@ -1,57 +1,57 @@
 {%- capture site_name -%}
-  {%- t site_info.name -%}
+  {{- site.t[page.lang].site_info.name -}}
 {%- endcapture -%}
 
 {%- capture motto -%}
-  {%- t site_info.motto -%}
+  {{- site.t[page.lang].site_info.motto -}}
 {%- endcapture -%}
 
 {%- capture locale -%}
-  {%- t site_info.locale -%}
+  {{- site.t[page.lang].site_info.locale -}}
 {%- endcapture -%}
 
 {%- capture title -%}
-  {%- t page.title -%}
+  {{- page.title -}}
 {%- endcapture -%}
 
 {%- capture description -%}
-  {%- t page.description -%}
+  {{- page.description -}}
 {%- endcapture -%}
 
 {%- capture app_id -%}
-  {%- t page.facebook.app_id -%}
+  {{- site.t[page.lang].open_graph.facebook.app_id -}}
 {%- endcapture -%}
 
 {%- capture publisher -%}
-  {%- t page.facebook.publisher -%}
+  {{- site.t[page.lang].open_graph.facebook.publisher -}}
 {%- endcapture -%}
 
 {%- capture author -%}
-  {%- t page.facebook.author -%}
+  {{- site.t[page.lang].open_graph.facebook.author -}}
 {%- endcapture -%}
 
 {%- capture image -%}
-  {%- t page.facebook.img -%}
+  {{- site.t[page.lang].open_graph.facebook.img -}}
 {%- endcapture -%}
 
 <!-- Facebook Open Graph -->
-{%- unless publisher contains "null" -%}
+{%- if publisher -%}
   <meta property="article:publisher" content="{{- publisher -}}">
-{%- endunless -%}
+{%- endif -%}
 
-{%- unless author contains "null" -%}
+{%- if author -%}
   <meta property="article:author" content="{{- author -}}">
-{%- endunless -%}
+{%- endif -%}
 
-{%- unless app_id contains "null" -%}
+{%- if app_id -%}
   <meta property="fb:app_id" content="{{- app_id -}}">
-{%- endunless -%}
+{%- endif -%}
 
 <meta property="og:type" content="website">
 
 <meta property="og:locale" content="{{- locale -}}">
 
-{%- if motto contains "null" -%}
+{%- if motto == empty -%}
   <meta property="og:site_name" content="{{- site_name -}}">
 {%- else -%}
   <meta property="og:site_name" content="{{- site_name -}}: {{ motto -}}">
@@ -61,8 +61,8 @@
 
 <meta property="og:description" content="{{- description -}}">
 
-{%- unless image contains "null" -%}
+{%- if image -%}
   <meta property="og:image" content="{{- site.url -}}/{{- image -}}">
-{%- endunless -%}
+{%- endif -%}
 
 <meta property="og:url" content="{{- site.baseurl -}}{{- page.url -}}">

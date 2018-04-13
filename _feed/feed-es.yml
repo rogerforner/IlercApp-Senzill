@@ -1,3 +1,11 @@
+---
+title: pages.index.title
+
+namespace: feed
+permalink: /feed/feed.json
+permalink_es: /feed/feed.json
+---
+
 {%- capture title -%}
   {%- t page.title -%}
 {%- endcapture -%}
