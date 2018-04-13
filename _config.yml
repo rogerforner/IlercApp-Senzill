@@ -78,15 +78,6 @@ t:
         publisher: #@compteLlocWeb
         author: #@compteAutorRa
         img:
-    pages:
-      index:
-        title: "Inicio"
-        description: "Página de inicio."
-        robots: "index,follow"
-      about:
-        title: "Sobre nosotros"
-        description: "Página sobre nosotros."
-        robots: "index,follow"
 
 # Tipus de publicacions
 # ------------------------------------------------------------------------------
