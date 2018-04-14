@@ -45,16 +45,16 @@ twitter:
 {%- endfor -%}
 
 <h2>Publicacions (idioma pàgina)</h2>
-{%- assign posts_ca = site.posts | where:"lang", page.lang -%}
-{%- for post in posts_ca -%}
+{%- assign postsCa = site.posts | where:"lang", page.lang -%}
+{%- for post in postsCa -%}
   <h3><a href="{{- post.url | prepend: site.baseurl -}}">{{- post.title -}}</a></h3>
   <p>{{- post.description -}}</p>
   <p><small><strong>{{- post.date | date: "%B %e, %Y" -}}</strong></small></p>
 {%- endfor -%}
 
 <h2>Publicacions (ES)</h2>
-{%- assign posts_ca = site.posts | where:"lang", "es" -%}
-{%- for post in posts_ca -%}
+{%- assign postsEs = site.posts | where:"lang", "es" -%}
+{%- for post in postsEs -%}
   <h3><a href="{{- post.url | prepend: site.baseurl -}}">{{- post.title -}}</a></h3>
   <p>{{- post.description -}}</p>
   <p><small><strong>{{- post.date | date: "%B %e, %Y" -}}</strong></small></p>
