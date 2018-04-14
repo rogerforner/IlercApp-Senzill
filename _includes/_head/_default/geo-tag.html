@@ -14,7 +14,7 @@
   {{- site.t[page.lang].site_info.geo_tag.icbm -}}
 {%- endcapture -%}
 
-{%- if region -%}
+{%- if region != empty -%}
   <meta name="geo.region" content="{{- icbm -}}" />
   <meta name="geo.placename" content="{{- region -}}" />
   <meta name="geo.position" content="{{- placename -}}" />

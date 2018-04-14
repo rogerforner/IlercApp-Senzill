@@ -20,3 +20,18 @@ twitter:
 ---
 
 <h1>Pàgina en català</h1>
+<ul>
+  {% for lang in site.langs %}
+  	{% if lang == page.lang %}
+  	<li class="active">{{lang}}</li>
+  	{% else %}
+    <li>
+      {% assign pageName = page.path | split:'/' | last %}
+      {% capture otherPath %}_{{page.collection}}/{{lang}}/{{pageName}}{% endcapture %}
+      {% assign otherPage = site[page.collection] | where:'path', otherPath | first %}
+      {% assign langUrl = otherPage.url %}
+      <a href="{{ site.baseurl }}{{langUrl}}">{{lang}}</a>
+    </li>
+  	{% endif %}
+  {% endfor %}
+</ul>

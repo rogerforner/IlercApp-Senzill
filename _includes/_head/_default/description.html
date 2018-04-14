@@ -1,5 +1,5 @@
 {%- capture description -%}
-  {{- page.description -}}
+  {{- page.description | default:site.t[page.lang].site_info.description -}}
 {%- endcapture -%}
 
 <meta name="description" content="{{- description -}}">

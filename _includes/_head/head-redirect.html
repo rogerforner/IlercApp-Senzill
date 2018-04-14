@@ -3,22 +3,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Informació del lloc web -->
-{%- include _head/title.html -%}
-{%- include _head/description.html -%}
+{%- include _head/_redirect/title.html -%}
+{%- include _head/_redirect/description.html -%}
 
 <!-- Etiquetes de geolocalització -->
-{%- include _head/geo-tag.html -%}
+{%- include _head/_redirect/geo-tag.html -%}
 
 <!-- Controlar el comportament dels buscadors -->
-{%- include _head/robots.html -%}
-
-<!-- Verificació del lloc web -->
-{%- include _head/site-verification.html -%}
+{%- include _head/_redirect/robots.html -%}
 
 <!-- Open Graph -->
-{%- include _head/open-graph-facebook.html -%}
-{%- include _head/open-graph-twitter.html -%}
-{%- include _head/open-graph-gplus.html -%}
+{%- include _head/_redirect/open-graph-facebook.html -%}
+{%- include _head/_redirect/open-graph-twitter.html -%}
+{%- include _head/_redirect/open-graph-gplus.html -%}
 
 <!-- Manifest -->
 <link rel="manifest" href="{{ '/manifest.json' | prepend: site.baseurl }}">
@@ -26,5 +23,8 @@
 <!-- Estils del lloc web -->
 <link rel="stylesheet" href="{{ '/assets/css/ilercapp.css' | prepend: site.baseurl }}"/>
 
+<!-- Verificació del lloc web -->
+{%- include _head/_partials/site-verification.html -%}
+
 <!-- Analítica del lloc web -->
-{%- include _head/analytic-google.html -%}
+{%- include _head/_partials/analytic-google.html -%}

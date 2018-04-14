@@ -1,0 +1,5 @@
+{%- capture robots -%}
+  {{- page.robots | default:'index,follow' -}}
+{%- endcapture -%}
+
+<meta name="robots" content="{{- robots -}}">

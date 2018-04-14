@@ -1,0 +1,9 @@
+{%- capture lang -%}
+  {{- site.t.default_lang -}}
+{%- endcapture -%}
+
+{%- capture description -%}
+  {{- page.description | default:site.t[lang].site_info.description -}}
+{%- endcapture -%}
+
+<meta name="description" content="{{- description -}}">

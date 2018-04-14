@@ -7,7 +7,7 @@
 {%- endcapture -%}
 
 {%- capture description -%}
-  {{- page.description -}}
+  {{- page.description | default:site.t[page.lang].site_info.description -}}
 {%- endcapture -%}
 
 {%- capture publisher -%}
@@ -23,11 +23,11 @@
 {%- endcapture -%}
 
 <!-- Google Plus -->
-{%- if publisher -%}
+{%- if publisher != empty -%}
   <link rel="publisher" href="{{- publisher -}}">
 {%- endif -%}
 
-{%- if author -%}
+{%- if author != empty -%}
   <link rel="author" content="{{- author -}}"/>
 {%- endif -%}
 
@@ -39,6 +39,6 @@
 
 <meta itemprop="description" content="{{- description -}}">
 
-{%- if image -%}
+{%- if image != empty -%}
   <meta itemprop="image" content="{{- site.url -}}/{{- image -}}">
 {%- endif -%}

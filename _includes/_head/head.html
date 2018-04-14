@@ -1,0 +1,30 @@
+<!-- Meta etiquetes obligatories -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!-- Informació del lloc web -->
+{%- include _head/_default/title.html -%}
+{%- include _head/_default/description.html -%}
+
+<!-- Etiquetes de geolocalització -->
+{%- include _head/_default/geo-tag.html -%}
+
+<!-- Controlar el comportament dels buscadors -->
+{%- include _head/_default/robots.html -%}
+
+<!-- Open Graph -->
+{%- include _head/_default/open-graph-facebook.html -%}
+{%- include _head/_default/open-graph-twitter.html -%}
+{%- include _head/_default/open-graph-gplus.html -%}
+
+<!-- Manifest -->
+<link rel="manifest" href="{{ '/manifest.json' | prepend: site.baseurl }}">
+
+<!-- Estils del lloc web -->
+<link rel="stylesheet" href="{{ '/assets/css/ilercapp.css' | prepend: site.baseurl }}"/>
+
+<!-- Verificació del lloc web -->
+{%- include _head/_partials/site-verification.html -%}
+
+<!-- Analítica del lloc web -->
+{%- include _head/_partials/analytic-google.html -%}

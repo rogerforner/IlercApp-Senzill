@@ -34,6 +34,7 @@ t:
     site_info:
       name: "Senzill"
       motto: "Per Roger Forner Fabre"
+      description: "Senzill no ha sigut fàcil de desenvolupar però s'ha realitzat per a tu, per a que puguis treballar amb el teu lloc web JAMstack d'una forma senzilla i pràctica."
       locale: "ca-es"
       geo_tag:
         region: "ES-CT"
@@ -58,6 +59,7 @@ t:
     site_info:
       name: "Senzill"
       motto:
+      description: "Senzill no ha sido fácil de dasarrollar pero se ha realizado para ti, para que puedas trabajar con tu sitio web JAMstack de una forma sencilla y práctica."
       locale: "es-es"
       geo_tag:
         region:

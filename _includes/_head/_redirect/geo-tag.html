@@ -1,0 +1,26 @@
+{%- capture lang -%}
+  {{- site.t.default_lang -}}
+{%- endcapture -%}
+
+{%- capture region -%}
+  {{- site.t[lang].site_info.geo_tag.region -}}
+{%- endcapture -%}
+
+{%- capture placename -%}
+  {{- site.t[lang].site_info.geo_tag.placename -}}
+{%- endcapture -%}
+
+{%- capture position -%}
+  {{- site.t[lang].site_info.geo_tag.position -}}
+{%- endcapture -%}
+
+{%- capture icbm -%}
+  {{- site.t[lang].site_info.geo_tag.icbm -}}
+{%- endcapture -%}
+
+{%- if region != empty -%}
+  <meta name="geo.region" content="{{- icbm -}}" />
+  <meta name="geo.placename" content="{{- region -}}" />
+  <meta name="geo.position" content="{{- placename -}}" />
+  <meta name="ICBM" content="{{- position -}}" />
+{%- endif -%}

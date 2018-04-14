@@ -11,7 +11,7 @@
 {%- endcapture -%}
 
 {%- capture description -%}
-  {{- page.description -}}
+  {{- page.description | default:site.t[page.lang].site_info.description -}}
 {%- endcapture -%}
 
 {%- capture publisher -%}
@@ -29,11 +29,11 @@
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
 
-{%- if publisher -%}
+{%- if publisher != empty -%}
   <meta name="twitter:site" content="{{- publisher -}}">
 {%- endif -%}
 
-{%- if author -%}
+{%- if author != empty -%}
   <meta name="twitter:creator" content="{{- author -}}">
 {%- endif -%}
 
@@ -45,6 +45,6 @@
 
 <meta name="twitter:description" content="{{- description -}}">
 
-{%- if image -%}
+{%- if image != empty -%}
   <meta name="twitter:image" content="{{- site.url -}}/{{- image -}}">
 {%- endif -%}

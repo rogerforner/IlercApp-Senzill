@@ -1,49 +1,57 @@
+{%- capture lang -%}
+  {{- site.t.default_lang -}}
+{%- endcapture -%}
+
 {%- capture site_name -%}
-  {{- site.t[page.lang].site_info.name -}}
+  {{- site.t[lang].site_info.name -}}
 {%- endcapture -%}
 
 {%- capture motto -%}
-  {{- site.t[page.lang].site_info.motto -}}
+  {{- site.t[lang].site_info.motto -}}
 {%- endcapture -%}
 
 {%- capture locale -%}
-  {{- site.t[page.lang].site_info.locale -}}
+  {{- site.t[lang].site_info.locale -}}
 {%- endcapture -%}
 
 {%- capture title -%}
-  {{- page.title -}}
+  {%- if motto == empty -%}
+    {{- site_name -}}
+  {%- else -%}
+    {{- site_name -}}: {{ motto -}}
+  {%- endif -%}
 {%- endcapture -%}
 
 {%- capture description -%}
-  {{- page.description -}}
+  {{- page.description | default:site.t[lang].site_info.description -}}
 {%- endcapture -%}
 
 {%- capture app_id -%}
-  {{- site.t[page.lang].open_graph.facebook.app_id -}}
+  {{- site.t[lang].open_graph.facebook.app_id -}}
 {%- endcapture -%}
 
 {%- capture publisher -%}
-  {{- site.t[page.lang].open_graph.facebook.publisher -}}
+  {{- site.t[lang].open_graph.facebook.publisher -}}
 {%- endcapture -%}
 
 {%- capture author -%}
-  {{- site.t[page.lang].open_graph.facebook.author -}}
+  {{- site.t[lang].open_graph.facebook.author -}}
 {%- endcapture -%}
 
 {%- capture image -%}
-  {{- site.t[page.lang].open_graph.facebook.img -}}
+  {{- site.t[lang].open_graph.facebook.img -}}
 {%- endcapture -%}
 
 <!-- Facebook Open Graph -->
-{%- if publisher -%}
+{%- if publisher != empty -%}
   <meta property="article:publisher" content="{{- publisher -}}">
 {%- endif -%}
 
-{%- if author -%}
+{%- if author != empty -%}
   <meta property="article:author" content="{{- author -}}">
 {%- endif -%}
 
-{%- if app_id -%}
+{%- if app_id != empty -%}
   <meta property="fb:app_id" content="{{- app_id -}}">
 {%- endif -%}
 
@@ -61,7 +69,7 @@
 
 <meta property="og:description" content="{{- description -}}">
 
-{%- if image -%}
+{%- if image != empty -%}
   <meta property="og:image" content="{{- site.url -}}/{{- image -}}">
 {%- endif -%}
 

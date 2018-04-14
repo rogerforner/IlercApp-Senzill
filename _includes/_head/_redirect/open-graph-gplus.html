@@ -1,0 +1,48 @@
+{%- capture lang -%}
+  {{- site.t.default_lang -}}
+{%- endcapture -%}
+
+{%- capture site_name -%}
+  {{- site.t[lang].site_info.name -}}
+{%- endcapture -%}
+
+{%- capture motto -%}
+  {{- site.t[lang].site_info.motto -}}
+{%- endcapture -%}
+
+{%- capture description -%}
+  {{- page.description | default:site.t[lang].site_info.description -}}
+{%- endcapture -%}
+
+{%- capture publisher -%}
+  {{- site.t[lang].open_graph.google_plus.publisher -}}
+{%- endcapture -%}
+
+{%- capture author -%}
+  {{- site.t[lang].open_graph.google_plus.author -}}
+{%- endcapture -%}
+
+{%- capture image -%}
+  {{- site.t[lang].open_graph.google_plus.img -}}
+{%- endcapture -%}
+
+<!-- Google Plus -->
+{%- if publisher != empty -%}
+  <link rel="publisher" href="{{- publisher -}}">
+{%- endif -%}
+
+{%- if author != empty -%}
+  <link rel="author" content="{{- author -}}"/>
+{%- endif -%}
+
+{%- if motto == empty -%}
+  <meta itemprop="name" content="{{ site_name -}}">
+{%- else -%}
+  <meta itemprop="name" content="{{ site_name -}}: {{ motto -}}">
+{%- endif -%}
+
+<meta itemprop="description" content="{{- description -}}">
+
+{%- if image != empty -%}
+  <meta itemprop="image" content="{{- site.url -}}/{{- image -}}">
+{%- endif -%}

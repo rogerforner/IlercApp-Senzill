@@ -1,0 +1,58 @@
+{%- capture lang -%}
+  {{- site.t.default_lang -}}
+{%- endcapture -%}
+
+{%- capture site_name -%}
+  {{- site.t[lang].site_info.name -}}
+{%- endcapture -%}
+
+{%- capture motto -%}
+  {{- site.t[lang].site_info.motto -}}
+{%- endcapture -%}
+
+{%- capture title -%}
+  {%- if motto == empty -%}
+    {{- site_name -}}
+  {%- else -%}
+    {{- site_name -}}: {{ motto -}}
+  {%- endif -%}
+{%- endcapture -%}
+
+{%- capture description -%}
+  {{- page.description | default:site.t[lang].site_info.description -}}
+{%- endcapture -%}
+
+{%- capture publisher -%}
+  {{- site.t[lang].open_graph.twitter.publisher -}}
+{%- endcapture -%}
+
+{%- capture author -%}
+  {{- site.t[lang].open_graph.twitter.author -}}
+{%- endcapture -%}
+
+{%- capture image -%}
+  {{- site.t[lang].open_graph.twitter.img -}}
+{%- endcapture -%}
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image">
+
+{%- if publisher != empty -%}
+  <meta name="twitter:site" content="{{- publisher -}}">
+{%- endif -%}
+
+{%- if author != empty -%}
+  <meta name="twitter:creator" content="{{- author -}}">
+{%- endif -%}
+
+{%- if motto == empty -%}
+  <meta name="twitter:title" content="{{- title }} | {{ site_name -}}">
+{%- else -%}
+  <meta name="twitter:title" content="{{- title }} | {{ site_name -}}: {{ motto -}}">
+{%- endif -%}
+
+<meta name="twitter:description" content="{{- description -}}">
+
+{%- if image != empty -%}
+  <meta name="twitter:image" content="{{- site.url -}}/{{- image -}}">
+{%- endif -%}
