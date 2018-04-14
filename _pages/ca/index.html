@@ -20,6 +20,7 @@ twitter:
 ---
 
 <h1>Pàgina en català</h1>
+<h2>Idiomes</h2>
 <ul>
   {% for lang in site.langs %}
   	{% if lang == page.lang %}
@@ -35,3 +36,26 @@ twitter:
   	{% endif %}
   {% endfor %}
 </ul>
+
+<h2>Publicacions (totes)</h2>
+{%- for post in site.posts -%}
+  <h3><a href="{{- post.url | prepend: site.baseurl -}}">{{- post.title -}}</a></h3>
+  <p>{{- post.description -}}</p>
+  <p><small><strong>{{- post.date | date: "%B %e, %Y" -}}</strong></small></p>
+{%- endfor -%}
+
+<h2>Publicacions (idioma pàgina)</h2>
+{%- assign posts_ca = site.posts | where:"lang", page.lang -%}
+{%- for post in posts_ca -%}
+  <h3><a href="{{- post.url | prepend: site.baseurl -}}">{{- post.title -}}</a></h3>
+  <p>{{- post.description -}}</p>
+  <p><small><strong>{{- post.date | date: "%B %e, %Y" -}}</strong></small></p>
+{%- endfor -%}
+
+<h2>Publicacions (ES)</h2>
+{%- assign posts_ca = site.posts | where:"lang", "es" -%}
+{%- for post in posts_ca -%}
+  <h3><a href="{{- post.url | prepend: site.baseurl -}}">{{- post.title -}}</a></h3>
+  <p>{{- post.description -}}</p>
+  <p><small><strong>{{- post.date | date: "%B %e, %Y" -}}</strong></small></p>
+{%- endfor -%}
