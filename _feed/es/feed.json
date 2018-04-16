@@ -25,7 +25,7 @@
   "favicon": "{{ site.url | append:site.baseurl | append:'/assets/icons/icon-512x512.png' }}",
   "items": [
   {%- assign postsEs = site.posts | where:"lang", page.lang -%}
-  {%- for post in postsEs -%}
+  {%- for post in postsEs limit:20 -%}
     {
       "id": "{{- forloop.index -}}",
       "title": "{{- post.title -}}",
