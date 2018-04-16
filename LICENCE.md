@@ -1,4 +1,10 @@
-``` bash
+All the code, except the texts and images that are displayed in the Front-end,
+is subject to the MIT license.
+
+The texts and images displayed in the Front-end are subject to the license that
+is displayed in the footer or legal terms of the Website.
+
+```
 MIT License
 
 Copyright (c) 2018 Roger Forner Fabre
