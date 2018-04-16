@@ -1,5 +1,5 @@
 ---
-# JSON Feed (RSS)
+title: "JSON Feed"
 ---
 {%- capture site_name -%}
   {{- site.t[page.lang].site_info.name -}}
@@ -9,20 +9,20 @@
   {{- site.t[page.lang].site_info.motto -}}
 {%- endcapture -%}
 
-{%- capture title -%}
+{%- capture fullTitle -%}
   {%- if motto == empty -%}
-    {{- site_name -}}
+    {{- name | prepend:' | ' -}}
   {%- else -%}
-    {{- site_name -}}: {{ motto -}}
+    {{- name | prepend:' | ' | append:': ' -}}{{- motto -}}
   {%- endif -%}
 {%- endcapture -%}
 
 {
   "version": "https://jsonfeed.org/version/1",
-  "title": "{{- title -}}",
+  "title": "{{- fullTitle -}}",
   "home_page_url": "{{- site.url | append:site.baseurl -}}",
   "feed_url": "{{- site.url | append:site.baseurl | append:page.url -}}.json",
-  "favicon": "{{ site.url | append:site.baseurl | append:'/assets/icons/icon-512x512.png' }}",
+  "favicon": "{{- site.url | append:site.baseurl | append:'/assets/icons/icon-512x512.png' -}}",
   "items": [
   {%- assign postsCa = site.posts | where:"lang", page.lang -%}
   {%- for post in postsCa limit:20 -%}
@@ -30,7 +30,9 @@
       "id": "{{- forloop.index -}}",
       "title": "{{- post.title -}}",
       "url": "{{- site.url | append:site.baseurl | append:post.url -}}",
-      "image": "{{- post.image -}}",
+      {%- if post.image -%}
+        "image": "{{- post.image -}}",
+      {%- endif -%}
       "content_text": "{{- post.description -}}",
       "date_published": "{{- post.date | date_to_xmlschema -}}"
     }{%- if forloop.length > 1 and forloop.length != forloop.index -%},{%- endif -%}

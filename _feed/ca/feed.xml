@@ -1,0 +1,38 @@
+---
+title: "XML Feed"
+---
+{%- capture site_name -%}
+  {{- site.t[page.lang].site_info.name -}}
+{%- endcapture -%}
+
+{%- capture motto -%}
+  {{- site.t[page.lang].site_info.motto -}}
+{%- endcapture -%}
+
+{%- capture title -%}
+  {%- if motto == empty -%}
+    {{- site_name -}}
+  {%- else -%}
+    {{- site_name -}}: {{ motto -}}
+  {%- endif -%}
+{%- endcapture -%}
+
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+	<channel>
+		<title>{{- title | xml_escape -}}</title>
+    <link>{{- site.url | append:site.baseurl -}}</link>
+    <atom:link href="{{- site.url | append:site.baseurl | append:page.url -}}.xml" rel="self" type="application/rss+xml" />
+		<lastBuildDate>{% for post in site.posts limit:1 %}{{- post.date | date_to_xmlschema -}}{% endfor %}</lastBuildDate>
+    {%- assign postsCa = site.posts | where:"lang", page.lang -%}
+    {%- for post in postsCa limit:20 -%}
+			<item>
+				<title>{{- post.title | xml_escape -}}</title>
+				<description>{{- post.description | xml_escape -}}</description>
+				<pubDate>{{- post.date | date_to_xmlschema -}}</pubDate>
+				<link>{{- site.url | append:site.baseurl | append:post.url -}}</link>
+				<guid isPermaLink="true">{{- site.url | append:site.baseurl | append:post.url -}}</guid>
+			</item>
+		{% endfor %}
+	</channel>
+</rss>

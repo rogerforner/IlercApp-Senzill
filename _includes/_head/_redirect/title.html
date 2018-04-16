@@ -10,10 +10,13 @@
   {{- site.t[lang].site_info.motto -}}
 {%- endcapture -%}
 
-<title>
+{%- capture fullTitle -%}
+  {{- title -}}
   {%- if motto == empty -%}
-    {{- name -}}
+    {{ name | prepend:' | ' -}}
   {%- else -%}
-    {{- name -}}: {{ motto -}}
+    {{- name | prepend:' | ' | append:': ' -}}{{- motto -}}
   {%- endif -%}
-</title>
+{%- endcapture -%}
+
+<title>{{- fullTitle -}}</title>

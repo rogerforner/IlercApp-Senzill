@@ -128,14 +128,14 @@ defaults:
     scope:
       path: "_feed/ca"
     values:
-      permalink: "/ca/feed/:title/"
+      permalink: "/ca/feed/:title"
       lang: "ca"
       layout: null
   -
     scope:
       path: "_feed/es"
     values:
-      permalink: "/es/feed/:title/"
+      permalink: "/es/feed/:title"
       lang: "es"
       layout: null
 
