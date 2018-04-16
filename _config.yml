@@ -88,6 +88,8 @@ collections:
     output: true
   posts:
     output: true
+  feed:
+    output: true
 
 # URLs permanents
 # ------------------------------------------------------------------------------
@@ -122,6 +124,20 @@ defaults:
       permalink: "/es/posts/:title"
       lang: "es"
       layout: "default"
+  - # Feed (RSS)
+    scope:
+      path: "_feed/ca"
+    values:
+      permalink: "/ca/feed/:title"
+      lang: "ca"
+      layout: null
+  -
+    scope:
+      path: "_feed/es"
+    values:
+      permalink: "/es/feed/:title"
+      lang: "es"
+      layout: null
 
 
 # Progressive Web App

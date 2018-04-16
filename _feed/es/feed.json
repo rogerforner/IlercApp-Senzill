@@ -1,30 +1,31 @@
 ---
-title: pages.index.title
-
-namespace: feed
-permalink: /feed/feed.json
-permalink_es: /feed/feed.json
+# JSON Feed (RSS)
 ---
-
-{%- capture title -%}
-  {%- t page.title -%}
-{%- endcapture -%}
-
-{%- capture name -%}
-  {%- t site_info.name -%}
+{%- capture site_name -%}
+  {{- site.t[page.lang].site_info.name -}}
 {%- endcapture -%}
 
 {%- capture motto -%}
-  {%- t site_info.motto -%}
+  {{- site.t[page.lang].site_info.motto -}}
+{%- endcapture -%}
+
+{%- capture title -%}
+  {%- if motto == empty -%}
+    {{- site_name -}}
+  {%- else -%}
+    {{- site_name -}}: {{ motto -}}
+  {%- endif -%}
 {%- endcapture -%}
 
 {
   "version": "https://jsonfeed.org/version/1",
-  "title": "{{- title }} {% if motto contains "null" %} | {{ name -}}{%- else -%} | {{ name -}}: {{ motto -}}{%- endif -%}",
+  "title": "{{- title -}}",
   "home_page_url": "{{- site.url | append:site.baseurl -}}",
-  "feed_url": "{{- site.url | append:site.baseurl | append:page.url -}}",
+  "feed_url": "{{- site.url | append:site.baseurl | append:page.url -}}.json",
+  "favicon": "{{ site.url | append:site.baseurl | append:'/assets/icons/icon-512x512.png' }}",
   "items": [
-  {%- for post in site.posts -%}
+  {%- assign postsEs = site.posts | where:"lang", page.lang -%}
+  {%- for post in postsEs -%}
     {
       "id": "{{- forloop.index -}}",
       "title": "{{- post.title -}}",
