@@ -17,11 +17,11 @@
 {%- include _head/_default/open-graph-twitter.html -%}
 {%- include _head/_default/open-graph-gplus.html -%}
 
-<!-- Manifest -->
-<link rel="manifest" href="{{ '/manifest.json' | prepend: site.baseurl }}">
-
 <!-- Estils del lloc web -->
-<link rel="stylesheet" href="{{ '/assets/css/ilercapp.css' | prepend: site.baseurl }}"/>
+{%- include _head/_partials/styles.html -%}
+
+<!-- Manifest + favicons -->
+{%- include _head/_partials/manifest.html -%}
 
 <!-- Verificació del lloc web -->
 {%- include _head/_partials/site-verification.html -%}
