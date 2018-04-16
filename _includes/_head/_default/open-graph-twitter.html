@@ -23,7 +23,7 @@
 {%- endcapture -%}
 
 {%- capture image -%}
-  {{- site.t[page.lang].open_graph.twitter.img -}}
+  {{- page.twitter.img | default:site.t[page.lang].open_graph.twitter.img -}}
 {%- endcapture -%}
 
 <!-- Twitter -->
@@ -46,5 +46,5 @@
 <meta name="twitter:description" content="{{- description -}}">
 
 {%- if image != empty -%}
-  <meta name="twitter:image" content="{{- site.url -}}/{{- image -}}">
+  <meta name="twitter:image" content="{{- site.url | append:site.baseurl | append:image -}}">
 {%- endif -%}

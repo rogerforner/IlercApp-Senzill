@@ -19,7 +19,7 @@
 {%- endcapture -%}
 
 {%- capture image -%}
-  {{- site.t[page.lang].open_graph.google_plus.img -}}
+  {{- page.google_plus.img | default:site.t[page.lang].open_graph.google_plus.img -}}
 {%- endcapture -%}
 
 <!-- Google Plus -->
@@ -40,5 +40,5 @@
 <meta itemprop="description" content="{{- description -}}">
 
 {%- if image != empty -%}
-  <meta itemprop="image" content="{{- site.url -}}/{{- image -}}">
+  <meta itemprop="image" content="{{- site.url | append:site.baseurl | append:image -}}">
 {%- endif -%}

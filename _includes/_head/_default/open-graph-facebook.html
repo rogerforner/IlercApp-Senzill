@@ -31,7 +31,7 @@
 {%- endcapture -%}
 
 {%- capture image -%}
-  {{- site.t[page.lang].open_graph.facebook.img -}}
+  {{- page.facebook.img | default:site.t[page.lang].open_graph.facebook.img -}}
 {%- endcapture -%}
 
 <!-- Facebook Open Graph -->
@@ -62,7 +62,7 @@
 <meta property="og:description" content="{{- description -}}">
 
 {%- if image != empty -%}
-  <meta property="og:image" content="{{- site.url -}}/{{- image -}}">
+  <meta property="og:image" content="{{- site.url | append:site.baseurl | append:image -}}">
 {%- endif -%}
 
-<meta property="og:url" content="{{- site.baseurl -}}{{- page.url -}}">
+<meta property="og:url" content="{{- site.url | append:site.baseurl | append:page.url -}}">
