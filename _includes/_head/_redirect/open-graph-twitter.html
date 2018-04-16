@@ -54,5 +54,5 @@
 <meta name="twitter:description" content="{{- description -}}">
 
 {%- if image != empty -%}
-  <meta name="twitter:image" content="{{- site.url -}}/{{- image -}}">
+  <meta name="twitter:image" content="{{- site.url | append:site.baseurl | append:image -}}">
 {%- endif -%}

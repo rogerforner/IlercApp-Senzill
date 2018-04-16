@@ -44,5 +44,5 @@
 <meta itemprop="description" content="{{- description -}}">
 
 {%- if image != empty -%}
-  <meta itemprop="image" content="{{- site.url -}}/{{- image -}}">
+  <meta itemprop="image" content="{{- site.url | append:site.baseurl | append:image -}}">
 {%- endif -%}
