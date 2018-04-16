@@ -145,6 +145,7 @@ gulp.task('watch', ['site'], function() {
     '_includes/**/*.html',
     '_layouts/**/*.html',
     '_posts/**/*.{html, md}',
+    '_feed/**/*.{json, xml}',
     './*.html',
   ], ['site']);
   gulp.watch('./**/*.yml', ['site']);
