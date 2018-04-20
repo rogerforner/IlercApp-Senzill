@@ -144,6 +144,7 @@ gulp.task('watch', ['site'], function() {
     '_i18n/**/*.html',
     '_includes/**/*.html',
     '_layouts/**/*.html',
+    '_pages/**/*.{html, md}',
     '_posts/**/*.{html, md}',
     '_feed/**/*.{json, xml}',
     './*.html',
