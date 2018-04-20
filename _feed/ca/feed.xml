@@ -33,6 +33,6 @@ title: "XML Feed"
 				<link>{{- site.url | append:site.baseurl | append:post.url -}}</link>
 				<guid isPermaLink="true">{{- site.url | append:site.baseurl | append:post.url -}}</guid>
 			</item>
-		{% endfor %}
+		{%- endfor -%}
 	</channel>
 </rss>
