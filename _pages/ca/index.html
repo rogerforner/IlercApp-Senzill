@@ -73,3 +73,81 @@ twitter:
     {%- endfor -%}
   </div>
 {%- endfor -%}
+
+<h2>Publicacions agrupades per categories (idioma pàgina)</h2>
+{%- for category in site.categories -%}
+  <div class="archive-group">
+    {%- capture category_name -%}{{- category | first -}}{%- endcapture -%}
+    <h3><u>{{ category_name }}</u></h3>
+
+    {%- for post in site.categories[category_name] -%}
+      {%- if post.lang == page.lang -%}
+        <ul>
+          <li><a href="{{- post.url | prepend: site.baseurl -}}">{{- post.title -}}</a></li>
+        </ul>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endfor -%}
+
+<h2>Publicacions agrupades per categories (ES)</h2>
+{%- for category in site.categories -%}
+  <div class="archive-group">
+    {%- capture category_name -%}{{- category | first -}}{%- endcapture -%}
+    <h3><u>{{ category_name }}</u></h3>
+
+    {%- for post in site.categories[category_name] -%}
+      {%- if post.lang == 'es' -%}
+        <ul>
+          <li><a href="{{- post.url | prepend: site.baseurl -}}">{{- post.title -}}</a></li>
+        </ul>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endfor -%}
+
+<h2>Publicacions agrupades per etiquetes (totes)</h2>
+{%- for tag in site.tags -%}
+  <div class="archive-group">
+    {%- capture tag_name -%}{{- tag | first -}}{%- endcapture -%}
+    <h3><u>{{ tag_name }}</u></h3>
+
+    {%- for post in site.tags[tag_name] -%}
+      <ul>
+        <li><a href="{{- post.url | prepend: site.baseurl -}}">{{- post.title -}}</a></li>
+      </ul>
+    {%- endfor -%}
+  </div>
+{%- endfor -%}
+
+<h2>Publicacions agrupades per etiquetes (idioma pàgina)</h2>
+{%- for category in site.tags -%}
+  <div class="archive-group">
+    {%- capture tag_name -%}{{- category | first -}}{%- endcapture -%}
+    <h3><u>{{ tag_name }}</u></h3>
+
+    {%- for post in site.tags[tag_name] -%}
+      {%- if post.lang == page.lang -%}
+        <ul>
+          <li><a href="{{- post.url | prepend: site.baseurl -}}">{{- post.title -}}</a></li>
+        </ul>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endfor -%}
+
+<h2>Publicacions agrupades per etiquetes (ES)</h2>
+{%- for category in site.tags -%}
+  <div class="archive-group">
+    {%- capture tag_name -%}{{- category | first -}}{%- endcapture -%}
+    <h3><u>{{ tag_name }}</u></h3>
+
+    {%- for post in site.tags[tag_name] -%}
+      {%- if post.lang == 'es' -%}
+        <ul>
+          <li><a href="{{- post.url | prepend: site.baseurl -}}">{{- post.title -}}</a></li>
+        </ul>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endfor -%}

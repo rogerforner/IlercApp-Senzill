@@ -144,9 +144,12 @@ gulp.task('watch', ['site'], function() {
     '_i18n/**/*.html',
     '_includes/**/*.html',
     '_layouts/**/*.html',
-    '_pages/**/*.{html, md}',
-    '_posts/**/*.{html, md}',
-    '_feed/**/*.{json, xml}',
+    '_pages/**/*.html',
+    '_pages/**/*.md',
+    '_posts/**/*.html',
+    '_posts/**/*.md',
+    '_feed/**/*.json',
+    '_feed/**/*.xml',
     './*.html',
   ], ['site']);
   gulp.watch('./**/*.yml', ['site']);
