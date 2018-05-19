@@ -1,0 +1,37 @@
+---
+lang: ca
+title: "Arxiu"
+description: "Arxiu d'etiquetes."
+robots: "index,follow"
+
+facebook:
+  app_id:
+  publisher:
+  author:
+  img: "/assets/icons/icon-512x512.png"
+google_plus:
+  publisher:
+  author:
+  img: "/assets/icons/icon-512x512.png"
+twitter:
+  publisher:
+  author:
+  img: "/assets/icons/icon-512x512.png"
+---
+
+<h1>Arxiu d'etiquetes</h1>
+
+{%- for tag in site.tags -%}
+  <div class="archive-group">
+    {%- capture tagName -%}{{- tag | first -}}{%- endcapture -%}
+    <h3 id="{{- tagName | replace:' ', '-' | downcase -}}" >{{- tagName -}}</h3>
+
+    {%- for post in site.tags[tagName] -%}
+      {%- if post.lang == page.lang -%}
+        <ul>
+          <li><a href="{{- post.url | prepend: site.baseurl -}}">{{- post.title -}}</a></li>
+        </ul>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endfor -%}
