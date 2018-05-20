@@ -90,7 +90,10 @@ gulp.task('html', function (html) {
     gulp.src('_site/**/*.html', {base: './'}),
     htmlmin({
       removeComments: true,
-      collapseWhitespace: true
+      collapseWhitespace: true,
+      minifyCSS: true,
+      minifyJS: true,
+      minifyURLs: true,
     }),
     gulp.dest('./')
   ],
@@ -151,6 +154,7 @@ gulp.task('watch', ['site'], function() {
     '_feed/**/*.json',
     '_feed/**/*.xml',
     './*.html',
+    './.htaccess',
   ], ['site']);
   gulp.watch('./**/*.yml', ['site']);
 });

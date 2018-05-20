@@ -1,6 +1,7 @@
 ---
 title: "JSON Feed"
 ---
+
 {%- capture site_name -%}
   {{- site.t[page.lang].site_info.name -}}
 {%- endcapture -%}

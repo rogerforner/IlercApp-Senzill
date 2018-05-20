@@ -1,0 +1,4 @@
+---
+permalink: ".htaccess"
+---
+ErrorDocument 404 {{ site.url | append:site.baseurl -}}/404.html
