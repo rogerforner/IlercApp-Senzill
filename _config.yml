@@ -19,7 +19,7 @@ exclude:
 
 # Lloc Web
 # ------------------------------------------------------------------------------
-url: "http://senzill.ia"
+url: "http://senzill.oo"
 baseurl: "/_site"
 
 # Idiomes
@@ -34,7 +34,7 @@ t:
     site_info:
       name: "Senzill"
       motto: "Per Roger Forner Fabre"
-      description: "Senzill no ha sigut fàcil de desenvolupar però s'ha realitzat per a tu, per a que puguis treballar amb el teu lloc web JAMstack d'una forma senzilla i pràctica."
+      description: "Senzill és un projecte, basat en Jekyll, destinat a facilitar el desenvolupament de llocs webs estàtics o JAMstack."
       locale: "ca-es"
       geo_tag:
         region: "ES-CT"
@@ -59,7 +59,7 @@ t:
     site_info:
       name: "Senzill"
       motto:
-      description: "Senzill no ha sido fácil de dasarrollar pero se ha realizado para ti, para que puedas trabajar con tu sitio web JAMstack de una forma sencilla y práctica."
+      description: "Senzill es un proyecto, basado en Jekyll, destinado a facilitar el desarrollo de aplicaciones estáticas o JAMstack."
       locale: "es-es"
       geo_tag:
         region:
