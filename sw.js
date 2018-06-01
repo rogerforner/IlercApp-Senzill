@@ -2,9 +2,13 @@
 layout: null
 ---
 /*
-# PWA: Service Worker
-Adaptat de https://preview.pwabuilder.com/serviceworker (Cache-first network)
-*******************************************************************************/
+| ------------------------------------------------------------------------------
+| PWA: Service Worker
+| ------------------------------------------------------------------------------
+| Adaptat de https://preview.pwabuilder.com/serviceworker (Cache-first network).
+|
+*/
+
 // var CACHE = "{{- site.pwa.manifest.name -}}-{{- site.time | date: '%Y-%m-%d-%H-%M' -}}";
 var CACHE = "{{- site.pwa.manifest.name -}}-precache";
 var precacheFiles = [

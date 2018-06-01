@@ -5,6 +5,7 @@
 | Adaptat de https://preview.pwabuilder.com/serviceworker
 |
 */
+
 if (navigator.serviceWorker.controller) {
   console.log('[PWA Builder] active service worker found, no need to register')
 } else {
@@ -24,6 +25,7 @@ if (navigator.serviceWorker.controller) {
 | - Mirar la pàgina 404.html de l'arrel.
 |
 */
+
 function setCookie(cname, cvalue, exdays) {
   var d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
