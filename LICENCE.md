@@ -1,10 +1,3 @@
-All the code, except the texts and images that are displayed in the Front-end,
-is subject to the MIT license.
-
-The texts and images displayed in the Front-end are subject to the license that
-is displayed in the footer or legal terms of the Website.
-
-```
 MIT License
 
 Copyright (c) 2018 Roger Forner Fabre
@@ -26,4 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-```
