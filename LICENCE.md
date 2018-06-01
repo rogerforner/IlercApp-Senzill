@@ -1,3 +1,5 @@
+MIT License
+
 All the code, except the texts and images that are displayed in the Front-end,
 is subject to the MIT license.
 
