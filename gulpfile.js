@@ -96,6 +96,7 @@ gulp.task('javascript', function () {
 ----------------------------------------------------------------------------- */
 gulp.task('build', shell.task([
   'jekyll build'
+  // 'jekyll build --config _config.yml,_config-prod.yml'
 ]));
 
 /*
