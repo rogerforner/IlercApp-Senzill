@@ -31,6 +31,10 @@ S'instal·laran els següents paquets (_package.json_):
 ```json
 "devDependencies": {
     "axios": "^0.18.0",
+    "moment": "^2.22.2",
+    "vue": "^2.5.16"
+},
+"dependencies": {
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^5.0.0",
     "gulp-clean-css": "^3.9.3",
@@ -38,8 +42,7 @@ S'instal·laran els següents paquets (_package.json_):
     "gulp-htmlmin": "^4.0.0",
     "gulp-sass": "^4.0.1",
     "gulp-shell": "^0.6.5",
-    "gulp-uglify": "^3.0.0",
-    "vue": "^2.5.16"
+    "gulp-uglify": "^3.0.0"
 }
 ```
 
@@ -86,7 +89,7 @@ window.location.href = "{{- site.url | append:site.baseurl -}}/{{- site.t.defaul
 
 :bulb: **Idea**
 
-Amb aquest fitxer es podria jugar. Per exemple, ampliant el temps d'espera abans de es dugui a terme la redirecció es podria proporcionar el temps suficient com per convertir el fitxer index.html amb una pantalla d'inici de càrrega o introductoria.
+Amb aquest fitxer es podria jugar. Per exemple, ampliant el temps d'espera abans de que es dugui a terme la redirecció, proporcionant el temps suficient com per convertir el fitxer index.html amb una pantalla d'inici de càrrega o introductoria.
 
 - Amb un Spinner.
 - Amb un vídeo.
