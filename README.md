@@ -50,9 +50,9 @@ S'instal·laran els següents paquets (_package.json_):
 
 Jekyll disposa de les seves pròpies comandes per dur a terme la compilació de _SASS_ i els fitxers que en componguin el projecte. Ara bé, en el nostre cas no en farem un ús directe d'aquestes, emprarem [gulp](https://gulpjs.com/).
 
-**gulp**
+**$ gulp**
 
-Podem veure la configuració de gult en el fitxer de l'arrel _gulpfile.js_.
+Podem veure la configuració de gulp en el fitxer de l'arrel _gulpfile.js_.
 
 Executant, en la _shell_ **gulp** (sense watch) compilarem el lloc web, estant, aquest, preparat per ser "consumit".
 
@@ -60,7 +60,7 @@ Executant, en la _shell_ **gulp** (sense watch) compilarem el lloc web, estant, 
 $ gulp
 ```
 
-**gulp watch**
+**$ gulp watch**
 
 Executant, en la _shell_ **gulp watch** també es compilarà el lloc web, però amb la diferència de que quan un fitxer sigui modificat, segons el tipus d'aquests, es durà endavant una compilació automàtica.
 
