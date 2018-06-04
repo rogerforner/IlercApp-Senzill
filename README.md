@@ -16,6 +16,20 @@
         - [Termes legals](#termes-legals)
     - [_config-prod.yml](#config-prodyml)
 - [Maquetació](#maquetacio)
+    - [Edició](#edicio)
+    - [Continguts (exemples)](#continguts-exemples)
+        - [Breadcrumbs](#breadcrumbs)
+        - [Idiomes](#idiomes)
+        - [Loops](#loops)
+            - [Publicacions + categories + etiquetes (tots els idiomes)](#publicacions-categories-etiquetes-tots-els-idiomes)
+            - [Publicacions (segons l'idioma de la pàgina)](#publicacions-segons-lidioma-de-la-pagina)
+            - [Publicacions (idioma definit)](#publicacions-idioma-definit)
+            - [Publicacions agrupades per categories (tots els idiomes)](#publicacions-agrupades-per-categories-tots-els-idiomes)
+            - [Publicacions agrupades per categories (segons l'idioma de la pàgina)](#publicacions-agrupades-per-categories-segons-lidioma-de-la-pagina)
+            - [Publicacions agrupades per categories (idioma definit)](#publicacions-agrupades-per-categories-idioma-definit)
+            - [Publicacions agrupades per etiquetes (totes els idiomes)](#publicacions-agrupades-per-etiquetes-totes-els-idiomes)
+            - [Publicacions agrupades per etiquetes (segons l'idioma de la pàgina)](#publicacions-agrupades-per-etiquetes-segons-lidioma-de-la-pagina)
+            - [Publicacions agrupades per etiquetes (idioma definit)](#publicacions-agrupades-per-etiquetes-idioma-definit)
 - [Bibliografia Web](#bibliografia-web)
 
 # Senzill
@@ -419,6 +433,267 @@ En el cas de que es desitgi emprar, només s'haurà de comentar la línia **98**
 ```
 
 # Maquetació
+
+Totes les col·leccions han de tenir el seu propi directori **_nomCol·leccio** i, a més a més, aquestes contindran un directori que es correspondrà a l'idioma, aquest definit en el fitxer de configuració **_config.yml**.
+
+Cada directori d'idioma contindrà les pàgines, ja siguin amb format _.html_ o _.md_. I aquestes tindran el mateix nom tant en un directori com a un altres, és a dir, si en l'idioma català tenim _benvinguts.html_, en l'idioma castellà hi afegirem el fitxer que es correspondrà a la seva traducció amb el mateix nom _benvinguts.html_.
+
+```
+_pages
+|
+|
++--- /ca
+|    404.html
+|    benvinguts.html
+|    etc.
+|
++--- /es
+|    404.html
+|    benvinguts.html
+|    etc.
+```
+
+_No ens hem de preocupar de que els fitxers d'ambdós directoris tinguin el mateix nom, el contingut estarà escrit amb l'idioma que li pertoqui._ A través de les URLs visualitzarem el fitxer corresponent gràcies al directori d'idioma:
+
+```
+https://rogerforner.com/ca/benvinguts
+https://rogerforner.com/es/benvinguts
+```
+
+:information_source: Per facilitar la navegació a través del lloc web s'han de dur endavant les bones pràctiques d'usuabilitat, aquestes citades per [Steve Krug](https://www.sensible.com/) en el seu llibre _Don't make me thing_.
+
+És a dir, **oblidem** d'una vegada per totes la navegació tediosa a través de les URLs.
+
+## Edició
+
+Totes les pàgines, sigui quina sigui la col·lecció, han de tenir un encapçalament, el qual s'iniciarà amb 3 guions (---) i, finalitzarà, també, amb 3 guions (---).
+
+A banda, dintre del propi contingut de la pàgina es podran escriure les variables definides tant en l'encapçalament com en els fitxer de configuració del lloc web. És Jekyll, en el moment de la compilació, qui interpretarà aquestes afegint-hi, en el seu lloc, el contingut apropiat.
+
+```yml
+---
+lang: ca
+title: "Sobre nosaltres"
+description: "Pàgina sobre nosaltres."
+robots: "index,follow"
+
+breadcrumbs:
+  - title: "Inici"
+    url: ""
+  - title: "Sobre nosaltres"
+
+facebook:
+  app_id:
+  publisher:
+  author:
+  img:
+google_plus:
+  publisher:
+  author:
+  img:
+twitter:
+  publisher:
+  author:
+  img:
+---
+```
+
+- La variable **lang** és obligada i és emprada per definir l'idioma de la pàgina.
+- Les variables **title**, **description** i **robots** són obligades i són emprades per emplenar les meta etiquetes corresponents.
+    - La variable "robots" pots contenir index,follow o noindex,nofollow, o ambdues possibilitats intercalades.
+- L'array **breadcrumbs** no és obligat, ho hauria de ser si tenim en compte les bones pràctiques de la usabilitat. És emprada per mostrar, en la mateixa pàgina, les migues de pa.
+    - Si la URL està buida, el text que li dona raó ser no serà un enllaç. EN cas contrari serà un enllaç que durà a aquella pàgina en concret.
+- Els arrays **facebook**, **google_plus** i **twitter** són emprats per sobreescriure la configuració per defecte de l'Open Graph protocol.
+
+## Continguts (exemples)
+
+### Breadcrumbs
+
+```html
+{%- for item in page.breadcrumbs -%}
+  {%- if item.url -%}
+    <a href="{{- site.url | append:site.baseurl -}}/{{- page.lang -}}/{{- item.url -}}">{{- item.title -}}</a>
+  {%- else -%}
+    {{- item.title | prepend:' / ' -}}
+  {%- endif -%}
+{%- endfor -%}
+```
+
+### Idiomes
+
+```html
+<ul>
+  {%- for lang in site.langs -%}
+  	{%- if lang == page.lang -%}
+  	  <li class="active">{{- lang -}}</li>
+  	{%- else -%}
+      <li>
+        {%- assign pageName = page.path | split:'/' | last -%}
+        {%- capture otherPath -%}_{{- page.collection -}}/{{- lang -}}/{{- pageName -}}{%- endcapture -%}
+        {%- assign otherPage = site[page.collection] | where:'path', otherPath | first -%}
+        {%- assign langUrl = otherPage.url -%}
+        <a href="{{- site.baseurl | append:langUrl | remove:'index.html' -}}">{{- lang -}}</a>
+      </li>
+  	{%- endif -%}
+  {%- endfor -%}
+</ul>
+```
+
+### Loops
+
+#### Publicacions + categories + etiquetes (tots els idiomes)
+
+```html
+{%- for post in site.posts -%}
+  <h3><a href="{{- post.url | prepend:site.baseurl -}}">{{- post.title -}}</a></h3>
+  <p>{{- post.description -}}</p>
+  <p><small><strong>{{- post.date | date:'%B %e, %Y' -}}</strong></small></p>
+  Categories:
+  <ul>
+    {%- for category in post.categories -%}
+      <li><a href="{{- site.url | append:site.baseurl -}}/{{- post.lang -}}/archive_categories#{{- category | replace:' ', '-' | downcase -}}">{{- category -}}</a></li>
+    {%- endfor -%}
+  </ul>
+  Etiquetes:
+  <ul>
+    {%- for tag in post.tags -%}
+      <li><a href="{{- site.url | append:site.baseurl -}}/{{- post.lang -}}/archive_tags#{{- tag | replace:' ', '-' | downcase -}}">{{- tag -}}</a></li>
+    {%- endfor -%}
+  </ul>
+{%- endfor -%}
+```
+
+#### Publicacions (segons l'idioma de la pàgina)
+
+```html
+{%- assign postsCa = site.posts | where:'lang', page.lang -%}
+{%- for post in postsCa -%}
+  <h3><a href="{{- post.url | prepend:site.baseurl -}}">{{- post.title -}}</a></h3>
+  <p>{{- post.description -}}</p>
+  <p><small><strong>{{- post.date | date:'%B %e, %Y' -}}</strong></small></p>
+{%- endfor -%}
+```
+
+#### Publicacions (idioma definit)
+
+```html
+{%- assign postsEs = site.posts | where:'lang', "es" -%}
+{%- for post in postsEs -%}
+  <h3><a href="{{- post.url | prepend:site.baseurl -}}">{{- post.title -}}</a></h3>
+  <p>{{- post.description -}}</p>
+  <p><small><strong>{{- post.date | date:'%B %e, %Y' -}}</strong></small></p>
+{%- endfor -%}
+```
+
+#### Publicacions agrupades per categories (tots els idiomes)
+
+```html
+{%- for category in site.categories -%}
+  <div class="archive-group">
+    {%- capture categoryName -%}{{- category | first -}}{%- endcapture -%}
+    <h3>{{ categoryName }}</h3>
+
+    {%- for post in site.categories[categoryName] -%}
+      <ul>
+        <li><a href="{{- post.url | prepend:site.baseurl -}}">{{- post.title -}}</a></li>
+      </ul>
+    {%- endfor -%}
+  </div>
+{%- endfor -%}
+```
+
+#### Publicacions agrupades per categories (segons l'idioma de la pàgina)
+
+```html
+{%- for category in site.categories -%}
+  <div class="archive-group">
+    {%- capture categoryName -%}{{- category | first -}}{%- endcapture -%}
+    <h3>{{ categoryName }}</h3>
+
+    {%- for post in site.categories[categoryName] -%}
+      {%- if post.lang == page.lang -%}
+        <ul>
+          <li><a href="{{- post.url | prepend:site.baseurl -}}">{{- post.title -}}</a></li>
+        </ul>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endfor -%}
+```
+
+#### Publicacions agrupades per categories (idioma definit)
+
+```html
+{%- for category in site.categories -%}
+  <div class="archive-group">
+    {%- capture categoryName -%}{{- category | first -}}{%- endcapture -%}
+    <h3>{{ categoryName }}</h3>
+
+    {%- for post in site.categories[categoryName] -%}
+      {%- if post.lang == 'es' -%}
+        <ul>
+          <li><a href="{{- post.url | prepend:site.baseurl -}}">{{- post.title -}}</a></li>
+        </ul>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endfor -%}
+```
+
+#### Publicacions agrupades per etiquetes (totes els idiomes)
+
+```html
+{%- for tag in site.tags -%}
+  <div class="archive-group">
+    {%- capture tagName -%}{{- tag | first -}}{%- endcapture -%}
+    <h3><u>{{ tagName }}</u></h3>
+
+    {%- for post in site.tags[tagName] -%}
+      <ul>
+        <li><a href="{{- post.url | prepend:site.baseurl -}}">{{- post.title -}}</a></li>
+      </ul>
+    {%- endfor -%}
+  </div>
+{%- endfor -%}
+```
+
+#### Publicacions agrupades per etiquetes (segons l'idioma de la pàgina)
+
+```html
+{%- for category in site.tags -%}
+  <div class="archive-group">
+    {%- capture tagName -%}{{- category | first -}}{%- endcapture -%}
+    <h3><u>{{ tagName }}</u></h3>
+
+    {%- for post in site.tags[tagName] -%}
+      {%- if post.lang == page.lang -%}
+        <ul>
+          <li><a href="{{- post.url | prepend:site.baseurl -}}">{{- post.title -}}</a></li>
+        </ul>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endfor -%}
+```
+
+#### Publicacions agrupades per etiquetes (idioma definit)
+
+```html
+{%- for category in site.tags -%}
+  <div class="archive-group">
+    {%- capture tagName -%}{{- category | first -}}{%- endcapture -%}
+    <h3><u>{{ tagName }}</u></h3>
+
+    {%- for post in site.tags[tagName] -%}
+      {%- if post.lang == 'es' -%}
+        <ul>
+          <li><a href="{{- post.url | prepend:site.baseurl -}}">{{- post.title -}}</a></li>
+        </ul>
+      {%- endif -%}
+    {%- endfor -%}
+  </div>
+{%- endfor -%}
+```
 
 # Bibliografia Web
 
