@@ -54,7 +54,7 @@ Jekyll disposa de les seves pròpies comandes per dur a terme la compilació de 
 
 Podem veure la configuració de gulp en el fitxer de l'arrel _gulpfile.js_.
 
-Executant, en la _shell_ **gulp** (sense watch) compilarem el lloc web, estant, aquest, preparat per ser "consumit".
+Executant, en la _shell_, **gulp** (sense watch) compilarem la totalitat del lloc web, quedant preparat per ser "consumit".
 
 ```
 $ gulp
@@ -62,7 +62,7 @@ $ gulp
 
 **$ gulp watch**
 
-Executant, en la _shell_ **gulp watch** també es compilarà el lloc web, però amb la diferència de que quan un fitxer sigui modificat, segons el tipus d'aquests, es durà endavant una compilació automàtica.
+Executant, en la _shell_, **gulp watch** també es compilarà el lloc web, però amb la diferència de que quan un fitxer sigui modificat, segons el tipus d'aquests, es durà endavant una compilació automàtica.
 
 ```
 $ gulp watch
@@ -72,7 +72,7 @@ S'ha de tenir en compte que mitjançant la comanda **jekyll build** no s'executa
 
 Dit això, hem de tenir present que l'execució del lloc web es durà a terme directament amb un **servidor local**, és indiferent si es tracta d'un [Laragon](https://laragon.org/) o un [XAMPP](https://www.apachefriends.org/es/index.html) o un [Wamp](http://www.wampserver.com/en/) o un [LAMP](https://es.wikipedia.org/wiki/LAMP) etc.
 
-Tenint en compte que el directori on es compila el lloc web és /_site, la nostra URL del localhos es visualitzarà (o somilar):
+Tenint en compte que el directori on es compila el lloc web és /_site, la nostra URL del localhost es visualitzarà (o similar):
 
 ```
 http://localhost/nomProjecte/_site/ca
@@ -108,6 +108,6 @@ A través de la compilació es duen a terme "dos" processos, un corresponent al 
 
 **Jekyll**:
 
-- Els fitxers **YML** són decodificats i emprats per permetre'n la compilació del lloc web, aquest dividit en diversos directoris /_nomDirectori.
+- Els fitxers **YML** són decodificats i emprats per permetre'n la correcta compilació del lloc web, aquest dividit en diversos directoris /_nomDirectori.
 
 # Configuració
