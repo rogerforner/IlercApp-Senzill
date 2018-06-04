@@ -1,3 +1,23 @@
+- [Senzill](#senzill)
+- [Instal·lació](#instal-lacio)
+    - [Descarregar](#descarregar)
+    - [npm](#npm)
+- [Execució](#execucio)
+    - [Compilació](#compilacio)
+- [Configuració](#configuracio)
+    - [_config.yml](#configyml)
+        - [Tractament de fitxers i directoris](#tractament-de-fitxers-i-directoris)
+        - [URL i baseurl](#url-i-baseurl)
+        - [Idiomes](#idiomes)
+        - [Traduccions](#traduccions)
+        - [Col·leccions (tipus de publicacions)](#col-leccions-tipus-de-publicacions)
+            - [Enllaços permanents](#enllacos-permanents)
+        - [Service worker](#service-worker)
+        - [Termes legals](#termes-legals)
+    - [_config-prod.yml](#config-prodyml)
+- [Maquetació](#maquetacio)
+- [Bibliografia Web](#bibliografia-web)
+
 # Senzill
 
 **Senzill** és un projecte, basat amb [Jekyll](https://jekyllrb.com/), destinat a facilitar el desenvolupament de llocs webs estàtics o [JAMstack](https://jamstack.org/).
@@ -397,3 +417,16 @@ En el cas de que es desitgi emprar, només s'haurà de comentar la línia **98**
  99   // 'jekyll build --config _config.yml,_config-prod.yml'
 100 ]));
 ```
+
+# Maquetació
+
+# Bibliografia Web
+
+Per més informació, en quant a Jekyll, es poden consultar els següents llocs web:
+
+- [Jekyll](https://jekyllrb.com/docs/home/)
+- [Liquid for designers](https://github.com/Shopify/liquid/wiki/Liquid-for-Designers)
+- [Gulp](https://gulpjs.com/)
+- [Service Workers](https://developers.google.com/web/fundamentals/primers/service-workers/?hl=es)
+- [JSON Feed](https://jsonfeed.org/)
+- [Open Graph protocol](http://ogp.me/)

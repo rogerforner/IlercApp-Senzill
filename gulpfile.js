@@ -73,6 +73,7 @@ gulp.task('javascript', function () {
   return gulp.src([
     './node_modules/axios/dist/axios.min.js',
     './node_modules/vue/dist/vue.min.js',
+    './node_modules/moment/min/moment-with-locales.min.js',
     './src/js/app.js',
     './src/js/vue/*.js'
   ])
