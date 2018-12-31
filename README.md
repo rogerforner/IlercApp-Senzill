@@ -43,13 +43,13 @@
 Podem descarregar el projecte fent-ne ús de [git](https://git-scm.com/), mitjançant la _shell_:
 
 ```
-$ git clone https://github.com/rogerforner/senzill.git
+$ git clone https://github.com/rogerforner/IlercApp-Senzill.git senzill
 ```
 
 Si es desitja un nom de directori diferent al del repositori (senzill):
 
 ```
-$ git clone https://github.com/rogerforner/senzill.git nomNou
+$ git clone https://github.com/rogerforner/IlercApp-Senzill.git nomNou
 ```
 
 ## npm
