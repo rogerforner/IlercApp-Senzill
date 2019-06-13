@@ -9,9 +9,7 @@
 	"author": "Roger Forner Fabre",
 	"license": "MIT",
 	"devDependencies": {
-		"axios": "^0.18.0",
-		"moment": "^2.22.2",
-		"vue": "^2.5.16"
+		"moment": "^2.22.2"
 	},
 	"dependencies": {
 		"gulp": "^4.0.0",
