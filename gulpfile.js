@@ -50,7 +50,7 @@ gulp.task('css', function () {
   .pipe(cleanCSS({
     compatibility: '*'
   }))
-  .pipe(concat('ilercapp.css'))
+  .pipe(concat('app.css'))
   .pipe(gulp.dest('./assets/css'))
 });
 
@@ -76,7 +76,7 @@ gulp.task('javascript', function () {
     './src/js/vue/*.js'
   ])
   .pipe(uglify())
-  .pipe(concat('ilercapp.js'))
+  .pipe(concat('app.js'))
   .pipe(gulp.dest('./assets/js'))
 });
 
