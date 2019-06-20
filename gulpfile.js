@@ -14,7 +14,7 @@ const concat = require('gulp-concat');
 const htmlmin = require('gulp-htmlmin');
 
 // JavaScript
-const uglify = require('gulp-uglify');
+const terser = require('gulp-terser');
 
 /*
 | ------------------------------------------------------------------------------
@@ -75,7 +75,7 @@ gulp.task('javascript', function () {
     './src/js/app.js',
     './src/js/vue/*.js'
   ])
-  .pipe(uglify())
+  .pipe(terser())
   .pipe(concat('app.js'))
   .pipe(gulp.dest('./assets/js'))
 });
@@ -125,7 +125,7 @@ gulp.task('sw', function () {
   return gulp.src(
     './_site/sw.js', {base: './'}
   )
-  .pipe(uglify())
+  .pipe(terser())
   .pipe(gulp.dest('./'))
 });
 

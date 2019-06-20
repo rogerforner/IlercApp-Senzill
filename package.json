@@ -1,24 +1,24 @@
 {
-	"name": "senzill",
-	"version": "1.0.0",
-	"description": "Senzill és un projecte, basat en Jekyll, destinat a facilitar el desenvolupament de llocs webs estàtics o JAMstack.",
-	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
-	"author": "Roger Forner Fabre",
-	"license": "MIT",
-	"devDependencies": {
-		"moment": "^2.22.2"
-	},
-	"dependencies": {
-		"gulp": "^4.0.0",
-		"gulp-autoprefixer": "^5.0.0",
-		"gulp-clean-css": "^3.9.3",
-		"gulp-concat": "^2.6.1",
-		"gulp-htmlmin": "^4.0.0",
-		"gulp-sass": "^4.0.1",
-		"gulp-shell": "^0.6.5",
-		"gulp-uglify": "^3.0.0"
-	}
+  "name": "senzill",
+  "version": "1.0.0",
+  "description": "Senzill és un projecte, basat en Jekyll, destinat a facilitar el desenvolupament de llocs webs estàtics o JAMstack.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Roger Forner Fabre",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-clean-css": "^3.9.3",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^4.0.0",
+    "gulp-sass": "^4.0.1",
+    "gulp-shell": "^0.6.5",
+    "gulp-terser": "^1.2.0"
+  },
+  "dependencies": {
+    "moment": "^2.22.2"
+  }
 }
