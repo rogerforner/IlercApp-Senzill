@@ -1,3 +1,5 @@
+> **Discontinuat**. He decidit no continuar amb el desenvolupament de Senzill per concentrar els meus esforços amb la meva pàgina web, la qual parteix d'aquest repositori. Accedeix [al repositori](https://github.com/rogerforner/rogerforner.com) on s'allotja la meva pàgina web i fes-ne ús del seu codi :)
+
 - [Senzill](#senzill)
 - [Instal·lació](#instal-lacio)
     - [Descarregar](#descarregar)
