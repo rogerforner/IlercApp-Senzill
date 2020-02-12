@@ -1,4 +1,4 @@
-:warning: **DISCONTINUAT**. He decidit no continuar amb el desenvolupament de Senzill per concentrar els meus esforços amb la meva [pàgina web](https://github.com/rogerforner/rogerforner.com), la qual parteix d'aquest.
+:warning: **DISCONTINUAT**. He decidit no continuar amb el desenvolupament de Senzill per concentrar els meus esforços amb altres coses.
 
 - [Senzill](#senzill)
 - [Instal·lació](#instal-lacio)
